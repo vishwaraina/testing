@@ -1,0 +1,70 @@
+package newPack.java;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class emp{
+    private String EmpName;
+
+    emp(String ename){
+        this.EmpName = ename;
+    }
+
+    public String getEmpName() {
+        return EmpName;
+    }
+  public String toString(){
+        return EmpName;
+  }
+
+}
+
+public class main {
+
+    public static void main (String [] args) {
+
+        Collection<emp> c = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+
+
+        int ch;
+        do {
+            System.out.println("1.Add");
+            System.out.println("2.Find");
+            System.out.println("3.Remove");
+            System.out.println("4.Get");
+            System.out.println("Enter your choice : ");
+            ch = scan.nextInt();
+            boolean b = false;
+            switch (ch) {
+                case 1:
+                    System.out.println("Enter ename : ");
+                    String ename = scan.nextLine();
+                    c.add(new emp(ename));
+                    break;
+                case 2:
+                    System.out.println(c);
+                    break;
+                case 3:
+                    b = false;
+                    System.out.println("ename?");
+                    ename = scan.nextLine();
+                    scan.nextLine();
+                    if (ename == ename) {
+                        System.out.println(ename);
+                        b = true;
+                    }
+            }
+            if (!b) {
+                System.out.println("not found");
+            }
+            break;
+
+        } while (ch != 0);
+
+    }
+
+    }
+
